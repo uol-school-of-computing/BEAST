@@ -7,12 +7,11 @@ bool BeastApp::OnInit(void)
 {
 //	wxLog::SetTraceMask(wxTraceMessages);
 
-	wxChar* plugin = NULL;
+	wxString plugin;
 
 	if (argc > 1)
 	    plugin = argv[1];
 
-	wxString str_argv(plugin);
 	//Create the main frame window
 	m_pBeastFrame = 
 	  new BeastFrame
@@ -21,7 +20,7 @@ bool BeastApp::OnInit(void)
 	       _T("BEAST - Bioinspired Evolutionary Agent Simulation Toolkit"),
 	       wxPoint(50, 50), 
 	       wxSize(808, 681), 
-	       str_argv.mb_str()
+	       plugin.mb_str()
 	 );
 
 	// Show the frame
